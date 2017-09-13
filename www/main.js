@@ -3,7 +3,10 @@
 
 $( document ).ready(function() 
         {
-           
+        //alert(localStorage.fio);
+        if (localStorage.fio==undefined) {localStorage.fio='Гость';}
+        $('#tfio').html(localStorage.fio);
+        
                 $("#popen").bind("click", function(){
                     var z=$("#page1").css('left');
                     //alert(z);

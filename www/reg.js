@@ -14,7 +14,7 @@ $( document ).ready(function()
                             //$( ".result" ).html( data );                        
                         localStorage.user_id=data;
                         alert( "Вы зарегистрированы"+localStorage.user_id);
-                        document.location='second.html';
+                        document.location='index.html';
                     });
                     //alert('mmm');
                     
