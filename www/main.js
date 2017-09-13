@@ -107,7 +107,7 @@ $( document ).ready(function()
               balloonPane:'outerBalloon',
               preset: 'islands#circleIcon',
               iconColor: 'violet',
-              
+              id_point: point.id
              });
         
         
@@ -124,7 +124,12 @@ $( document ).ready(function()
     myCollection.events        
         .add('dblclick', function (e) {
             e.get('target').options.unset('preset');
-            
+            id_point=e.get('target').options.get('id_point');
+            //var content=e.get('iconColor');
+            //alert(content);
+            var url1='http://integralkin.ru/projects/mapchargephone/ajax.php?func=mar&id_point='+id_point+'&id_user='+localStorage.user_id;
+            $.get(url1);
+            //alert(url1);
             clearTargetPoint();
             targetPoint = new ymaps.Placemark(e.get('coords'), e.get('iconContent') , { preset: 'islands#greenCircleIcon' });
             myMap.geoObjects.add(targetPoint);

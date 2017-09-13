@@ -21,9 +21,11 @@ while($row=mysql_fetch_assoc($res))
     $row['publicphone']=str_replace("-",'',$row['publicphone']); 
     $row['publicphone']=str_replace(" ",'',$row['publicphone']); 
     $row['publicphone']='+7'.$row['publicphone'];
+    
     $ar[$j]['coords']=array(trim($z1[1]), trim($z1[0])); //$row['coords'];
     $ar[$j]['text']=iconv('cp1251','utf-8',$row['name']);
     $ar[$j]['address']=iconv('cp1251','utf-8',$row['address']); 
+    $ar[$j]['id']=$row['id'];
     
     $j++;  
 }
