@@ -1,11 +1,18 @@
 //myMap=new Object;
 //myCollection = new Object;
 
+
 function skid()
 {
     
     var url1='http://integralkin.ru/projects/mapchargephone/ajax.php?func=skid&id_user='+localStorage.user_id;
     $('#layskid').show().load(url1); 
+}
+
+function skidhide()
+{
+    
+    $('#layskid').hide(); 
 }
 
 $( document ).ready(function() 
