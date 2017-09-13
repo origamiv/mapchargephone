@@ -24,13 +24,20 @@ $row=mysql_fetch_assoc($res);
 echo $row['mid']; //json_encode($ar);
 }
 
+if ($func=='click')
+{
+$id_point=$_REQUEST['id_point'];
+$id_user=$_REQUEST['id_user'];    
+$sql="INSERT INTO `objs_click` (`id_obj`, `dat`, `id_user`, `pr`) VALUES ('$id_point', NOW(), '$id_user', 'click')";
+execsql($sql);
+}
+
 if ($func=='mar')
 {
 $id_point=$_REQUEST['id_point'];
 $id_user=$_REQUEST['id_user'];    
-$sql="INSERT INTO `objs_click` (`id_obj`, `dat`, `id_user`) VALUES ('$id_point', NOW(), '$id_user')";
+$sql="INSERT INTO `objs_click` (`id_obj`, `dat`, `id_user`, `pr`) VALUES ('$id_point', NOW(), '$id_user', 'mar')";
 execsql($sql);
-
 }
 
 if ($func=='skid')
