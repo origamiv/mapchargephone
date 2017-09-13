@@ -33,4 +33,8 @@ execsql($sql);
 
 }
 
+if ($func=='skid')
+{
+    echo "jjggffrt";
+}
 ?>

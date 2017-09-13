@@ -47,7 +47,8 @@
               <div data-role="header" style='position: static; z-index: 1; top: 0px; width: 100%;background-color: LightSeaGreen;'>
                 <table><tr><td><img src='icon.png' id="popen" width='30px'></td>
                 <td style="color:black; font-weight: bold;width:100%;"><nobr>Зарядись-ка!</nobr></td>
-                <td style="color:black; font-weight: bold;text-align:right;"><span id="tfio">0000</span>&nbsp;&nbsp;&nbsp;</td>
+                <td style="color:black; font-weight: bold;text-align:right;"><span id="tskid" onclick="skid();"><nobr>ХОЧУ СКИДКУ!</nobr></span>&nbsp;&nbsp;&nbsp;</td>
+                <td style="color:black; font-weight: bold;text-align:right;"><span id="tfio"></span>&nbsp;&nbsp;&nbsp;</td>
                 
                 </tr>
                 </table>
@@ -57,11 +58,16 @@
                   <div id="map" style="margin-top: 0px;padding-top: 0px; width: 600px; height: 400px"></div>
                   <div id="predp" style="margin-top: 0px;padding-top: 0px; width: 600px; height: 100px; background-color: #DCDCDC;"></div>
               </div>
-
+              
+              <div id="layskid" style="display: table-cell;z-index:10;position:fixed;top:35%;left:50%; margin-left:-10%;padding:10px 50px 10px 50px; 
+              border: 2px solid red;background-color:yellow;
+              text-align:center;vertical-align:middle;">Ваш код:<b>56443w3232</b></div>    
               <!--div data-role="footer" style='position: absolute; z-index: 1; bottom: 0px; width: 100%;background-color: LightSeaGreen;'>
                 <h1><a href="#mypanel">Open panel</a></h1>
               </div -->
         </div>
+        
+        
         
         <div class='app' style='display: none;'> </div>
         <script type="text/javascript" src="cordova.js"></script>
