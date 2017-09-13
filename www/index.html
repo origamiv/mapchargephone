@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html id="htmlid">
+    <head>                     
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        
+        <script src="jquery.min.js"></script>
+        <link rel="stylesheet" href="jquery.mobile.min.css">
+        <script src="jquery.mobile.min.js"></script>
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;load=package.full" type="text/javascript"></script>
+
+        <title>MapChargePhone</title>
+    </head>
+    <body>                        
+        <div id="mypanel" style="height: 100%;width:250px;position: fixed; top:0px; background-color: silver;z-index: 1;">
+           <center>
+           <div><img src='banan.png' width="128px"><br>О Вашей Зарядись-ке</div>
+           <div><a href="reg.html"><img src='reg.png' width="128px"><br>Регистрация</a><br><br></div>
+           <div><img src='map.png' width="128px"><br>Карта<br><br></div>
+           <div><img src='prog.png' width="128px"><br>О разработчиках</div>
+           </center>
+        </div>
+        
+        
+        <div data-role="page" id='page1' style="position:fixed; left:0px; background-color: LightYellow; z-index: 1;">                        
+              <div data-role="header" style='position: static; z-index: 1; top: 0px; width: 100%;background-color: LightSeaGreen;'>
+                <table><tr><td><img src='icon.png' id="popen" width='30px'></td>
+                <td style="color:black; font-weight: bold;"><nobr>Зарядись-ка!</nobr></td></tr>
+                </table>
+              </div>
+
+              <div data-role="content" id="content" style="position: static; z-index: 1;">
+                  <div id="map" style="margin-top: 0px;padding-top: 0px; width: 600px; height: 400px"></div>
+                  <div id="predp" style="margin-top: 0px;padding-top: 0px; width: 600px; height: 100px; background-color: #DCDCDC;"></div>
+              </div>
+
+              <!--div data-role="footer" style='position: absolute; z-index: 1; bottom: 0px; width: 100%;background-color: LightSeaGreen;'>
+                <h1><a href="#mypanel">Open panel</a></h1>
+              </div -->
+        </div>
+        
+        <div class='app' style='display: none;'> </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="http://integralkin.ru/projects/mapchargephone/getdata.php"></script>
+        <script type="text/javascript" src="main.js"></script>  
+
+
+</body>
+</html>
