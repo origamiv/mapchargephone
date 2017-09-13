@@ -331,6 +331,7 @@ $( document ).ready(function()
     {
         clearSourcePoint();
         sourcePoint = e.get('geoObjects').get(0);
+        setCenter(sourcePoint, 12);
         createRoute();
     }
 
