@@ -137,8 +137,16 @@ $( document ).ready(function()
     
     
     
-    myCollection.events        
-        .add('dblclick', function (e) {
+    myCollection.events.add('click', function (e) {
+            id_point=e.get('target').options.get('id_point');
+            //var content=e.get('iconColor');
+            //alert(content);
+            var url1='http://integralkin.ru/projects/mapchargephone/ajax.php?func=click&id_point='+id_point+'&id_user='+localStorage.user_id;
+            //alert(url1);
+            $.get(url1);
+        });
+        
+        myCollection.events .add('dblclick', function (e) {
             e.get('target').options.unset('preset');
             id_point=e.get('target').options.get('id_point');
             //var content=e.get('iconColor');
