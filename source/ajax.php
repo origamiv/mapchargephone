@@ -35,6 +35,10 @@ execsql($sql);
 
 if ($func=='skid')
 {
-    echo "jjggffrt";
+    $val="jjggffrt";
+    echo $val;
+    $id_user=$_REQUEST['id_user'];    
+    $sql="INSERT INTO `skid_users` (`val`, `dat`, `id_user`) VALUES ('$val', NOW(), '$id_user')";
+    execsql($sql);
 }
 ?>
