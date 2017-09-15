@@ -1,5 +1,13 @@
 <?
 require_once "config.php";
+
+ function gen_pass( $length ) {
+
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    return substr(str_shuffle($chars),0,$length);
+
+}
+
 header('Access-Control-Allow-Origin: *'); 
 $func=$_REQUEST['func'];
 
@@ -15,7 +23,7 @@ $act=$_REQUEST['act'];
 $sql="INSERT INTO `users` (`fio`, `vozrast`, `login`, `pass`) VALUES ('{$_REQUEST['fio']}', '{$_REQUEST['vozrast']}', '{$_REQUEST['login']}', '{$_REQUEST['pass']}')";
 //echo $sql;
 
-execsql($sql);
+execsql($sql,'utf8');
 
 $sql="SELECT max(id) as mid FROM users";
 $res=execsql($sql);
@@ -42,7 +50,7 @@ execsql($sql);
 
 if ($func=='skid')
 {
-    $val="jjggffrt";
+    $val=gen_pass(12);
     echo $val;
     $id_user=$_REQUEST['id_user'];    
     $sql="INSERT INTO `skid_users` (`val`, `dat`, `id_user`) VALUES ('$val', NOW(), '$id_user')";

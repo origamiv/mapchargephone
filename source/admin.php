@@ -1,6 +1,9 @@
 <table width="100%">
 <tr>
+<td bgcolor="#dcdcdc"><a href="admin.php?act=users">Пользователи</a></td>
 <td bgcolor="#dcdcdc"><a href="admin.php?act=objs">Объекты</a></td>
+<td bgcolor="#dcdcdc"><a href="admin.php?act=clicks">Клики и маршруты</a></td>
+<td bgcolor="#dcdcdc"><a href="admin.php?act=skid">Купоны на скидку</a></td>
 <!--td bgcolor="#dcdcdc"><a href="admin.php?act=usl">Услуги</a></td>
 <td bgcolor="#dcdcdc"><a href="admin.php?act=rasp2">Расписание</a></td>
 <td bgcolor="#dcdcdc"><a href="admin.php?act=google">Параметры</a></td -->
@@ -452,6 +455,67 @@ else
 }
 }   
 
+
+if ($act=='skid')
+{
+    $sql="SELECT a.*,b.fio FROM skid_users a 
+    LEFT JOIN users b on a.id_user=b.id";
+    $res=execsql($sql,'utf8');
+    echo '<table>';
+    while($row=mysql_fetch_assoc($res))
+    {
+    echo '<tr bgcolor="#dcdcdc">';    
+    echo '<td>'.$row['id'].'</td>';    
+    echo '<td>'.$row['dat'].'</td>';    
+    echo '<td>'.$row['id_user'].'</td>';    
+    echo '<td>'.$row['val'].'</td>';    
+    echo '<td>'.$row['fio'].'</td>';    
+    
+    echo '</tr>';    
+    }
+    echo '</table>';
+}
+
+if ($act=='users')
+{
+    $sql="SELECT * FROM users";
+    $res=execsql($sql,'utf8');
+    echo '<table>';
+    while($row=mysql_fetch_assoc($res))
+    {
+    echo '<tr bgcolor="#dcdcdc">';    
+    echo '<td>'.$row['id'].'</td>';    
+    echo '<td>'.$row['fio'].'</td>';    
+    echo '<td>'.$row['vozrast'].'</td>';    
+    echo '<td>'.$row['login'].'</td>';    
+    echo '<td>'.$row['pass'].'</td>';    
+    
+    echo '</tr>';    
+    }
+    echo '</table>';
+}
+
+if ($act=='clicks')
+{
+    $sql="SELECT a.*,b.fio,c.name FROM objs_click a
+    LEFT JOIN users b on a.id_user=b.id
+    LEFT JOIN objs c on a.id_obj=c.id
+    ";
+    $res=execsql($sql,'utf8');
+    echo '<table bgcolor="#dcdcdc">';
+    while($row=mysql_fetch_assoc($res))
+    {
+    echo '<tr>';    
+    echo '<td>'.$row['id_obj'].'</td>';    
+    echo '<td>'.$row['name'].'</td>';    
+    echo '<td>'.$row['dat'].'</td>';    
+    echo '<td>'.$row['fio'].'</td>';    
+    echo '<td>'.$row['pr'].'</td>';    
+    
+    echo '</tr>';    
+    }
+    echo '</table>';
+}
 
 
 exit;
